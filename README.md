@@ -1,6 +1,6 @@
-# Caixeiro Viajante
+# Problema da Mochila
 
-Pesquisa sistemática e implementação do algoritmo do "Caixeiro Viajante"
+Pesquisa sistemática e sobre o "Problema da Mochila" (Knapsack problem) e sua solução algorítmica.
 
 Aula de Integração e Entrega Contínua - Tecnólogo em Desenvolvimento de Software Multiplataforma
 
