@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link icon rel="icon" href="./assets/box.png">
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="page-wrapper">
+
+    <!-- Cabeçalho com steps -->
+    <header class="header">
+      <div class="logo">
+        <i class="ti ti-truck"></i>
+        <span>Knapsack System</span>
+      </div>
+      <div class="steps">
+        <div class="step active" id="step-indicator-1">
+          <div class="step-circle">1</div>
+          <span>Transporte</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step" id="step-indicator-2">
+          <div class="step-circle">2</div>
+          <span>Itens</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- TELA 1: Transporte -->
+    <main class="screen" id="screen-1">
+      <div class="card">
+        <div class="card-header">
+          <h1>Cadastro de Transporte</h1>
+          <p>Preencha as informações do veículo e motorista</p>
+        </div>
+
+        <div class="form-body">
+          <div class="grid-2">
+            <div class="field">
+              <label for="name">Nome do motorista</label>
+              <input type="text" id="name" name="name" placeholder="Ex: João Silva" required>
+            </div>
+            <div class="field">
+              <label for="placa">Placa do veículo</label>
+              <input type="text" id="placa" name="placa" placeholder="Ex: ABC-1234" required>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="field">
+              <label for="transporte">Tipo de transporte</label>
+              <select id="transporte" name="transporte" required>
+                <option value="">Selecione</option>
+                <option value="carro">Carro</option>
+                <option value="van">Van</option>
+                <option value="caminhao">Caminhão</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="carga">Tipo de carga</label>
+              <select id="carga" name="carga" required>
+                <option value="">Selecione</option>
+                <option value="perecivel">Perecível</option>
+                <option value="nao-perecivel">Não perecível</option>
+                <option value="fragil">Frágil</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="field">
+              <label for="dimensao">Dimensão do transporte (m³)</label>
+              <input type="number" id="dimensao" name="dimensao" step="0.01" min="0" placeholder="0,00" required>
+            </div>
+            <div class="field">
+              <label for="capacidade">Capacidade máxima (kg)</label>
+              <input type="number" id="capacidade" name="capacidade" step="0.01" min="0" placeholder="0,00" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="destino">Destino</label>
+            <input type="text" id="destino" name="destino" placeholder="Ex: São Paulo, SP" required>
+          </div>
+
+          <div class="grid-2">
+            <div class="field">
+              <label for="saida">Horário de saída</label>
+              <input type="time" id="saida" name="saida" required>
+            </div>
+            <div class="field">
+              <label for="chegada">Horário de chegada</label>
+              <input type="time" id="chegada" name="chegada" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="obs-transporte">Observações</label>
+            <textarea id="obs-transporte" name="obs-transporte" placeholder="Informações adicionais..."></textarea>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <button class="btn-primary" onclick="irParaItens()">
+            Próximo
+            <i class="ti ti-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- TELA 2: Itens -->
+    <main class="screen hidden" id="screen-2">
+      <div class="card">
+        <div class="card-header">
+          <h1>Cadastro de Itens</h1>
+          <p>Adicione os itens que serão transportados</p>
+        </div>
+
+        <!-- Resumo -->
+        <div class="summary">
+          <div class="metric">
+            <span class="metric-label">Itens</span>
+            <span class="metric-value" id="total-itens">0</span>
+          </div>
+          <div class="metric">
+            <span class="metric-label">Peso total (kg)</span>
+            <span class="metric-value" id="total-peso">0,00</span>
+          </div>
+          <div class="metric">
+            <span class="metric-label">Valor total (R$)</span>
+            <span class="metric-value" id="total-valor">0,00</span>
+          </div>
+        </div>
+
+        <div class="items-list" id="items-list"></div>
+
+        <button class="btn-add" onclick="addItem()">
+          <i class="ti ti-plus"></i>
+          Adicionar item
+        </button>
+
+        <div class="card-footer two-buttons">
+          <button class="btn-secondary" onclick="voltarParaTransporte()">
+            <i class="ti ti-arrow-left"></i>
+            Voltar
+          </button>
+          <button class="btn-primary" onclick="salvar()">
+            <i class="ti ti-device-floppy"></i>
+            Salvar tudo
+          </button>
+        </div>
+
+        <div class="success-msg" id="success-msg">
+          <i class="ti ti-circle-check"></i>
+          <span id="success-text"></span>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
