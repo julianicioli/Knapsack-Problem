@@ -134,6 +134,12 @@ body {
   gap: 14px;
 }
 
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
 /* ── Fields ── */
 .field {
   display: flex;
@@ -326,9 +332,9 @@ body {
   gap: 10px;
 }
 
-.grid-3 {
+.grid-5 {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(5, 1fr);
   gap: 12px;
 }
 
@@ -381,7 +387,7 @@ body {
 /* ── Responsivo ── */
 @media (max-width: 560px) {
   .card-header, .form-body, .card-footer { padding-left: 1.25rem; padding-right: 1.25rem; }
-  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .grid-2, .grid-3, .grid-5 { grid-template-columns: 1fr; }
   .steps span { display: none; }
   .metric { padding: 0.75rem 1rem; }
   .items-list { padding: 1rem 1.25rem; }
