@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Cadastro | Knapsack System</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@600&display=swap"
+    rel="stylesheet"
+  >
+</head>
+
+<body>
+
+  <div class="page-wrapper">
+
+    <!-- Cabeçalho -->
+    <header class="header">
+
+      <div class="logo">
+        <i class="ti ti-truck"></i>
+
+        <span>Knapsack System</span>
+      </div>
+
+      <a
+        href="./login.html"
+        class="btn-secondary header-link"
+      >
+        <i class="ti ti-arrow-left"></i>
+
+        Voltar ao login
+      </a>
+
+    </header>
+
+    <!-- Tela de cadastro -->
+    <main class="screen">
+
+      <div class="card">
+
+        <!-- Cabeçalho do cartão -->
+        <div class="card-header">
+          <h1>Cadastro da Transportadora</h1>
+
+          <p>
+            Preencha as informações da transportadora
+          </p>
+        </div>
+
+        <!-- Formulário -->
+        <form class="form-body">
+
+          <div class="grid-2">
+
+            <div class="field">
+              <label for="razao-social">
+                Razão social
+              </label>
+
+              <input
+                type="text"
+                id="razao-social"
+                name="razao-social"
+                placeholder="Ex: Transportes Silva LTDA"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label for="nome-fantasia">
+                Nome fantasia
+              </label>
+
+              <input
+                type="text"
+                id="nome-fantasia"
+                name="nome-fantasia"
+                placeholder="Ex: Silva Transportes"
+                required
+              >
+            </div>
+
+          </div>
+
+          <div class="grid-2">
+
+            <div class="field">
+              <label for="cnpj">
+                CNPJ
+              </label>
+
+              <input
+                type="text"
+                id="cnpj"
+                name="cnpj"
+                placeholder="Ex: 00.000.000/0000-00"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label for="telefone">
+                Telefone
+              </label>
+
+              <input
+                type="tel"
+                id="telefone"
+                name="telefone"
+                placeholder="Ex: (00) 00000-0000"
+                required
+              >
+            </div>
+
+          </div>
+
+          <div class="field">
+            <label for="email">
+              E-mail
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Ex: transportadora@email.com"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="endereco">
+              Endereço
+            </label>
+
+            <input
+              type="text"
+              id="endereco"
+              name="endereco"
+              placeholder="Ex: Rua das Flores, 100"
+              required
+            >
+          </div>
+
+          <div class="grid-2">
+
+            <div class="field">
+              <label for="cidade">
+                Cidade
+              </label>
+
+              <input
+                type="text"
+                id="cidade"
+                name="cidade"
+                placeholder="Ex: Jacutinga"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label for="estado">
+                Estado
+              </label>
+
+              <select id="estado" name="estado" required>
+                <option value="">Selecione</option>
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+              </select>
+            </div>
+
+          </div>
+
+          <div class="grid-2">
+
+            <div class="field">
+              <label for="senha">
+                Senha
+              </label>
+
+              <input
+                type="password"
+                id="senha"
+                name="senha"
+                placeholder="Digite uma senha"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label for="confirmar-senha">
+                Confirmar senha
+              </label>
+
+              <input
+                type="password"
+                id="confirmar-senha"
+                name="confirmar-senha"
+                placeholder="Digite a senha novamente"
+                required
+              >
+            </div>
+
+          </div>
+
+          <label class="checkbox-field">
+            <input type="checkbox" required>
+
+            <span>
+              Confirmo que os dados informados estão corretos
+            </span>
+          </label>
+
+        </form>
+
+        <!-- Rodapé com botão -->
+        <div class="card-footer">
+
+          <button type="submit" class="btn-primary">
+            Criar conta
+
+            <i class="ti ti-user-plus"></i>
+          </button>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</body>
+
+</html>
