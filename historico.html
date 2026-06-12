@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Histórico de Transportes</title>
+
+  <link rel="stylesheet" href="./css/historico.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="page-wrapper">
+
+  <header class="header">
+    <div class="logo">
+      <i class="ti ti-truck"></i>
+      <span>Knapsack System</span>
+    </div>
+  </header>
+
+  <main class="card">
+
+    <div class="card-header">
+      <h1>Histórico de Transportes</h1>
+      <p>Visualize os transportes cadastrados</p>
+    </div>
+
+    <div class="filters">
+
+  <div class="search-box">
+    <i class="ti ti-search"></i>
+    <input
+      type="text"
+      placeholder="Buscar por destino, motorista ou placa..."
+    >
+  </div>
+
+  <select>
+    <option>Todos</option>
+    <option>Pendente</option>
+    <option>Em andamento</option>
+    <option>Entregue</option>
+  </select>
+
+</div>
+
+<div class="transport-list">
+
+  <div class="transport-card">
+
+    <div class="transport-icon">
+      <i class="ti ti-truck"></i>
+    </div>
+
+    <div class="transport-info">
+      <h3>Transporte #1</h3>
+      <span>Motorista: João Silva</span>
+      <span>Placa: ABC-1234</span>
+    </div>
+
+    <div class="transport-detail">
+      <i class="ti ti-map-pin"></i>
+      <div>
+        <small>Origem</small>
+        <strong>Campinas - SP</strong>
+      </div>
+    </div>
+
+    <div class="transport-detail">
+      <i class="ti ti-map-pin"></i>
+      <div>
+        <small>Destino</small>
+        <strong>São Paulo - SP</strong>
+      </div>
+    </div>
+
+    <div class="transport-detail">
+      <i class="ti ti-calendar"></i>
+      <div>
+        <small>Data</small>
+        <strong>28/05/2025</strong>
+      </div>
+    </div>
+
+    <div class="transport-detail">
+      <i class="ti ti-currency-real"></i>
+      <div>
+        <small>Valor</small>
+        <strong>R$ 12.500</strong>
+      </div>
+    </div>
+
+    <div class="transport-actions">
+
+      <span class="status entregue">
+        Entregue
+      </span>
+
+      <button class="btn-secondary">
+        Ver detalhes
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="transport-card">
+
+  <div class="transport-icon">
+    <i class="ti ti-truck"></i>
+  </div>
+
+  <div class="transport-info">
+    <h3>Transporte #2</h3>
+    <span>Motorista: Maria Santos</span>
+    <span>Placa: DEF-5678</span>
+  </div>
+
+  <div class="transport-detail">
+    <i class="ti ti-map-pin"></i>
+    <div>
+      <small>Origem</small>
+      <strong>Limeira - SP</strong>
+    </div>
+  </div>
+
+  <div class="transport-detail">
+    <i class="ti ti-map-pin"></i>
+    <div>
+      <small>Destino</small>
+      <strong>Campinas - SP</strong>
+    </div>
+  </div>
+
+  <div class="transport-detail">
+    <i class="ti ti-calendar"></i>
+    <div>
+      <small>Data</small>
+      <strong>30/05/2025</strong>
+    </div>
+  </div>
+
+  <div class="transport-detail">
+    <i class="ti ti-currency-real"></i>
+    <div>
+      <small>Valor</small>
+      <strong>R$ 8.700</strong>
+    </div>
+  </div>
+
+  <div class="transport-actions">
+    <span class="status andamento">
+      Em andamento
+    </span>
+
+    <button class="btn-secondary">
+      Ver detalhes
+    </button>
+  </div>
+
+</div>
+
+  </main>
+
+</div>
+
+<script src="./js/historico.js"></script>
+
+</body>
+</html>
