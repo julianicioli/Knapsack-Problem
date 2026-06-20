@@ -5,9 +5,9 @@ class MochilaModel:
         # Defina as credenciais do seu banco MySQL local aqui
         self.config = {
             'host': 'localhost',
-            'user': 'root',       # ajuste se o seu usuário for diferente
-            'passwd': '',         # coloque a senha do seu banco
-            'db': 'nome_do_seu_banco' # altere para o nome do seu schema/banco
+            'user': 'root',       
+            'passwd': '',        
+            'db': 'knapsack_bd' 
         }
 
     def resolver_knapsack(self, capacidade_maxima, itens):
