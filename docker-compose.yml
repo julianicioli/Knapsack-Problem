@@ -1,12 +1,12 @@
-version: '3.8'
-
 services:
   app:
     build: .
     container_name: knapsack_app
     ports:
-      - "8000:8000"  # Altere a porta se o seu main.py usar outra (ex: 5000, 80)
+      - "8000:8000"
     volumes:
-      - .:/app
+      - ./metrics:/metrics
+      - ./models:/models
+    working_dir: /metrics
     environment:
       - PYTHONUNBUFFERED=1
