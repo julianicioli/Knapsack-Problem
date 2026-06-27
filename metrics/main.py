@@ -11,18 +11,41 @@ mochila_model = MochilaModel()
 
 casos_teste = [
     {
-        "capacidade": 5.0,
+        "capacidade": 50.0,
         "itens": [
-            {'peso': 1, 'valor': 5},
-            {'peso': 2, 'valor': 4},
-            {'peso': 4, 'valor': 8},
-            {'peso': 5, 'valor': 6}
+            {'peso': 5,  'valor': 20},
+            {'peso': 10, 'valor': 35},
+            {'peso': 8,  'valor': 25},
+            {'peso': 3,  'valor': 12},
+            {'peso': 7,  'valor': 30},
+            {'peso': 12, 'valor': 40},
         ]
     },
     {
-        "capacidade": 0.0,
-        "itens": [{'peso': 2, 'valor': 10}]
-    }
+        "capacidade": 15.0,
+        "itens": [
+            {'peso': 14, 'valor': 100},  # item valioso mas pesado
+            {'peso': 2,  'valor': 10},
+            {'peso': 3,  'valor': 15},
+            {'peso': 5,  'valor': 25},
+            {'peso': 4,  'valor': 18},
+            {'peso': 6,  'valor': 22},
+            {'peso': 1,  'valor': 6},
+        ]
+    },
+        {
+        "capacidade": 10.0,
+        "itens": [
+            {'peso': 1, 'valor': 2},
+            {'peso': 3, 'valor': 9},
+            {'peso': 4, 'valor': 10},
+            {'peso': 5, 'valor': 11},
+            {'peso': 6, 'valor': 13},
+            {'peso': 7, 'valor': 14},
+            {'peso': 2, 'valor': 5},
+            {'peso': 8, 'valor': 15},
+        ]
+    },
 ]
 
 for caso_teste in casos_teste:
