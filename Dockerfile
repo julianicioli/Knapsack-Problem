@@ -1,6 +1,6 @@
 FROM python:3.11-slim
 
-WORKDIR /app
+WORKDIR /metrics
 
 # Instala as dependências de sistema necessárias para compilar o mysqlclient
 RUN apt-get update && apt-get install -y --no-install-recommends \
