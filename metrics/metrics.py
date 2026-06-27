@@ -3,53 +3,31 @@ import psutil
 import os
 
 
-def eh_primo(numero):
-
-    if numero < 2:
-        return False
-
-    for i in range(2, int(numero ** 0.5) + 1):
-        if numero % i == 0:
-            return False
-
-    return True
-
-
-def encontrar_n_esimo_primo(n):
-
-    contador = 0
-    numero = 1
-    iteracoes = 0
-
-    while contador < n:
-
-        numero += 1
-        iteracoes += 1
-
-        if eh_primo(numero):
-            contador += 1
-
-    return numero, iteracoes
-
-
-def executar_medicao(n):
-
+def executar_medicao(mochila_model, capacidade, itens):
     processo = psutil.Process(os.getpid())
-
     memoria_antes = processo.memory_info().rss / 1024 / 1024
 
     inicio = time.perf_counter()
-
-    primo, iteracoes = encontrar_n_esimo_primo(n)
-
+    valor_total, itens_selecionados = mochila_model.resolver_knapsack(capacidade, itens)
     fim = time.perf_counter()
 
     memoria_depois = processo.memory_info().rss / 1024 / 1024
 
+    peso_total_usado = sum(item["peso"] for item in itens_selecionados)
+    valor_total_obtido = valor_total
+    num_itens_disponiveis = len(itens)
+    num_itens_selecionados = len(itens_selecionados)
+
+    # Evita divisão por zero caso capacidade usada seja 0
+    eficiencia = round(valor_total_obtido / peso_total_usado, 6) if peso_total_usado > 0 else 0.0
+
     return {
-        "entrada": n,
-        "primo": primo,
+        "capacidade": capacidade,
+        "num_itens_disponiveis": num_itens_disponiveis,
+        "num_itens_selecionados": num_itens_selecionados,
+        "peso_total_usado": round(peso_total_usado, 6),
+        "valor_total": round(valor_total_obtido, 6),
+        "eficiencia": eficiencia,
         "tempo_ms": round((fim - inicio) * 1000, 6),
         "memoria_mb": round(memoria_depois - memoria_antes, 6),
-        "iteracoes": iteracoes
     }

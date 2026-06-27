@@ -2,49 +2,37 @@ import matplotlib.pyplot as plt
 
 
 def gerar_graficos(df):
+    df = df.sort_values("num_itens_disponiveis")
 
-    df = df.sort_values("entrada")
-
-    # Tempo x Entrada
-
+    # Gráfico 1: Tempo x Número de Itens Disponíveis
     plt.figure(figsize=(10, 6))
-
     plt.plot(
-        df["entrada"],
+        df["num_itens_disponiveis"],
         df["tempo_ms"],
-        marker="o"
+        marker="o",
+        color="steelblue"
     )
-
-    plt.title("Tempo de Execução x Entrada")
-
-    plt.xlabel("Número Sorteado")
-
+    plt.title("Tempo de Execução x Número de Itens Disponíveis")
+    plt.xlabel("Número de Itens Disponíveis")
     plt.ylabel("Tempo (ms)")
-
     plt.grid(True)
-
-    plt.savefig("/app/output/performance_graph.png")
-
+    plt.tight_layout()
+    plt.savefig("/metrics/output/tempo_x_itens.png")
     plt.close()
 
-    # Iterações x Entrada
-
+    # Gráfico 2: Eficiência x Capacidade da Mochila
+    df_sorted_cap = df.sort_values("capacidade")
     plt.figure(figsize=(10, 6))
-
     plt.plot(
-        df["entrada"],
-        df["iteracoes"],
-        marker="o"
+        df_sorted_cap["capacidade"],
+        df_sorted_cap["eficiencia"],
+        marker="o",
+        color="darkorange"
     )
-
-    plt.title("Iterações x Entrada")
-
-    plt.xlabel("Número Sorteado")
-
-    plt.ylabel("Quantidade de Iterações")
-
+    plt.title("Eficiência (Valor / Peso Usado) x Capacidade da Mochila")
+    plt.xlabel("Capacidade da Mochila")
+    plt.ylabel("Eficiência (valor / peso usado)")
     plt.grid(True)
-
-    plt.savefig("/app/output/iterations_graph.png")
-
+    plt.tight_layout()
+    plt.savefig("/metrics/output/eficiencia_x_capacidade.png")
     plt.close()
