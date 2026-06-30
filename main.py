@@ -1,4 +1,5 @@
 import eel
+<<<<<<< HEAD
 import os
 import sys
 from controller.mochila_controller import MochilaController
@@ -159,6 +160,21 @@ def iniciar_sistema():
     eel.init('web/html')
     print("Sistema Iniciado com sucesso! Abrindo a tela de login...")
     eel.start('login.html', mode='default', size=(1100, 780))
+=======
+from controller.mochila_controller import MochilaController
+
+def iniciar_sistema():
+    # Informa ao Eel que a pasta contendo a interface gráfica (View) chama-se 'web'
+    eel.init('web/html')
+    
+    # Instancia o controlador para registrar as funções expostas do Python
+    controller = MochilaController()
+    
+    print("Sistema Iniciado. Abrindo a interface gráfica...")
+    
+    # Abre o seu arquivo index.html em uma janela nativa do sistema
+    eel.start('index.html', mode='default', size=(1100, 780))
+>>>>>>> 522a007256d658489c768dff5f9cb62fcc5327c4
 
 if __name__ == "__main__":
     iniciar_sistema()

@@ -11,11 +11,21 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<<<<<<< HEAD
+=======
+
+  <script type="text/javascript" src="/eel.js"></script>
+  <script defer src="./js/script.js"></script>
+>>>>>>> 522a007256d658489c768dff5f9cb62fcc5327c4
 </head>
 <body>
 
 <div class="page-wrapper">
 
+<<<<<<< HEAD
+=======
+  <!-- HEADER -->
+>>>>>>> 522a007256d658489c768dff5f9cb62fcc5327c4
   <header class="header">
     <div class="logo">
       <i class="ti ti-truck"></i>
@@ -25,18 +35,27 @@
     <div class="steps">
       <div class="step active" id="step-indicator-1">
         <div class="step-circle">1</div>
+<<<<<<< HEAD
         <span>Transporte</span>
+=======
+        <span>Estoque</span>
+>>>>>>> 522a007256d658489c768dff5f9cb62fcc5327c4
       </div>
 
       <div class="step-line"></div>
 
       <div class="step" id="step-indicator-2">
         <div class="step-circle">2</div>
+<<<<<<< HEAD
         <span>Estoque</span>
+=======
+        <span>Transporte</span>
+>>>>>>> 522a007256d658489c768dff5f9cb62fcc5327c4
       </div>
     </div>
   </header>
 
+<<<<<<< HEAD
   <main class="screen" id="screen-2">
 
     <div class="card">
@@ -139,6 +158,13 @@
   </main>
 
   <main class="screen hidden" id="screen-1">
+=======
+  <!-- ===================== -->
+  <!-- TELA 1 - ESTOQUE -->
+  <!-- ===================== -->
+
+  <main class="screen" id="screen-1">
+>>>>>>> 522a007256d658489c768dff5f9cb62fcc5327c4
 
     <div class="card">
 
@@ -170,6 +196,7 @@
         <i class="ti ti-plus"></i>
         Adicionar Item
       </button>
+<<<<<<< HEAD
 <div class="field-calculo hidden" id="bloco-resultado-mochila" style="margin-top: 25px; padding: 20px; background-color: #f0fdf4; border-left: 4px solid #16a34a; border-radius: 8px;">
   <h3 style="color: #14532d; font-size: 1.1rem; margin-bottom: 10px;">Cálculo Matemático da Mochila</h3>
   <p style="margin: 4px 0; color: #1f2937;"><strong>Valor Total Otimizado:</strong> R$ 0,00</p>
@@ -182,14 +209,203 @@
 </div>
       <div class="card-footer two-buttons">
         <button class="btn-secondary" onclick="voltarParaTransporte()">
+=======
+
+      <div class="card-footer">
+        <button class="btn-primary" onclick="irParaTransporte()">
+          Próximo
+          <i class="ti ti-arrow-right"></i>
+        </button>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ===================== -->
+  <!-- TELA 2 - TRANSPORTE -->
+  <!-- ===================== -->
+
+  <main class="screen hidden" id="screen-2">
+
+    <div class="card">
+
+      <div class="card-header">
+        <h1>Cadastro de Transporte</h1>
+        <p>Preencha as informações do veículo e motorista</p>
+      </div>
+
+      <div class="form-body">
+
+        <div class="grid-2">
+
+          <div class="field">
+            <label for="name">Nome do motorista</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Ex: João Silva"
+              required>
+          </div>
+
+          <div class="field">
+            <label for="placa">Placa do veículo</label>
+            <input
+              type="text"
+              id="placa"
+              placeholder="Ex: ABC-1234"
+              required>
+          </div>
+
+        </div>
+
+        <div class="grid-2">
+
+          <div class="field">
+            <label for="transporte">Tipo de transporte</label>
+
+            <select id="transporte" required>
+              <option value="">Selecione</option>
+              <option value="carro">Carro</option>
+              <option value="van">Van</option>
+              <option value="caminhao">Caminhão</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="carga">Tipo de carga</label>
+
+            <select id="carga" required>
+              <option value="">Selecione</option>
+              <option value="perecivel">Perecível</option>
+              <option value="nao-perecivel">Não perecível</option>
+              <option value="fragil">Frágil</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="grid-3">
+
+          <div class="field">
+            <label for="comprimento-transporte">
+              Comprimento (m)
+            </label>
+
+            <input
+              type="number"
+              id="comprimento-transporte"
+              step="0.01"
+              min="0"
+              placeholder="0,00"
+              required>
+          </div>
+
+          <div class="field">
+            <label for="largura-transporte">
+              Largura (m)
+            </label>
+
+            <input
+              type="number"
+              id="largura-transporte"
+              step="0.01"
+              min="0"
+              placeholder="0,00"
+              required>
+          </div>
+
+          <div class="field">
+            <label for="altura-transporte">
+              Altura (m)
+            </label>
+
+            <input
+              type="number"
+              id="altura-transporte"
+              step="0.01"
+              min="0"
+              placeholder="0,00"
+              required>
+          </div>
+
+        </div>
+
+        <div class="field">
+          <label for="capacidade">
+            Capacidade máxima (kg)
+          </label>
+
+          <input
+            type="number"
+            id="capacidade"
+            step="0.01"
+            min="0"
+            placeholder="0,00"
+            required>
+        </div>
+
+        <div class="field">
+          <label for="destino">Destino</label>
+
+          <input
+            type="text"
+            id="destino"
+            placeholder="Ex: São Paulo, SP"
+            required>
+        </div>
+
+        <div class="grid-2">
+
+          <div class="field">
+            <label for="saida">Horário de saída</label>
+            <input type="time" id="saida" required>
+          </div>
+
+          <div class="field">
+            <label for="chegada">Horário de chegada</label>
+            <input type="time" id="chegada" required>
+          </div>
+
+        </div>
+
+        <div class="field">
+          <label for="obs-transporte">Observações</label>
+
+          <textarea
+            id="obs-transporte"
+            placeholder="Informações adicionais...">
+          </textarea>
+        </div>
+
+      </div>
+
+      <div class="card-footer two-buttons">
+
+        <button
+          class="btn-secondary"
+          onclick="voltarParaEstoque()">
+
+>>>>>>> 522a007256d658489c768dff5f9cb62fcc5327c4
           <i class="ti ti-arrow-left"></i>
           Voltar
         </button>
 
+<<<<<<< HEAD
         <button class="btn-primary" onclick="salvar()">
           <i class="ti ti-device-floppy"></i>
           Salvar Tudo
         </button>
+=======
+        <button
+          class="btn-primary"
+          onclick="salvar()">
+
+          <i class="ti ti-device-floppy"></i>
+          Salvar Tudo
+        </button>
+
+>>>>>>> 522a007256d658489c768dff5f9cb62fcc5327c4
       </div>
 
       <div class="success-msg" id="success-msg">
@@ -198,6 +414,7 @@
       </div>
 
     </div>
+<<<<<<< HEAD
   </main>
 
 </div>
@@ -205,5 +422,11 @@
 <script type="text/javascript" src="/eel.js"></script>
 <script src="./js/script.js"></script>
 
+=======
+
+  </main>
+
+</div>
+>>>>>>> 522a007256d658489c768dff5f9cb62fcc5327c4
 </body>
 </html>

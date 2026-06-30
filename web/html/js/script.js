@@ -1,5 +1,6 @@
 let counter = 0;
 
+<<<<<<< HEAD
 // Garante que o sistema inicie criando pelo menos um card de item em segundo plano
 window.addEventListener("DOMContentLoaded", () => {
   if (document.querySelectorAll('.item-card').length === 0) {
@@ -34,6 +35,28 @@ function voltarParaTransporte() {
   document.getElementById('screen-2').classList.remove('hidden');
 
   // Atualiza as bolinhas indicadoras no topo
+=======
+// ======================
+// Navegação entre telas
+// ======================
+
+function irParaTransporte() {
+  document.getElementById('screen-1').classList.add('hidden');
+  document.getElementById('screen-2').classList.remove('hidden');
+
+  document.getElementById('step-indicator-1').classList.remove('active');
+  document.getElementById('step-indicator-2').classList.add('active');
+
+  if (document.querySelectorAll('.item-card').length === 0) {
+    addItem();
+  }
+}
+
+function voltarParaEstoque() {
+  document.getElementById('screen-2').classList.add('hidden');
+  document.getElementById('screen-1').classList.remove('hidden');
+
+>>>>>>> 522a007256d658489c768dff5f9cb62fcc5327c4
   document.getElementById('step-indicator-2').classList.remove('active');
   document.getElementById('step-indicator-1').classList.add('active');
 }
@@ -77,9 +100,14 @@ function addItem() {
           <input
             type="number"
             placeholder="0"
+<<<<<<< HEAD
             min="1"
             step="1"
             value="1"
+=======
+            min="0"
+            step="1"
+>>>>>>> 522a007256d658489c768dff5f9cb62fcc5327c4
             data-field="qtd"
             oninput="updateSummary()">
         </div>
@@ -186,6 +214,10 @@ function updateSummary() {
 // ======================
 // Comunicação com o Backend (Eel)
 // ======================
+<<<<<<< HEAD
+=======
+
+>>>>>>> 522a007256d658489c768dff5f9cb62fcc5327c4
 function salvar() {
   const cards = document.querySelectorAll('.item-card');
   
@@ -194,6 +226,10 @@ function salvar() {
     return;
   }
 
+<<<<<<< HEAD
+=======
+  // 1. Monta o objeto de transporte a partir dos inputs do HTML
+>>>>>>> 522a007256d658489c768dff5f9cb62fcc5327c4
   const transporte = {
     motorista: document.getElementById('name').value,
     placa: document.getElementById('placa').value,
@@ -210,6 +246,7 @@ function salvar() {
   };
 
   if (!transporte.capacidade) {
+<<<<<<< HEAD
     alert("Erro: Informações de transporte ausentes. Por favor, volte e preencha a capacidade do veículo.");
     return;
   }
@@ -292,6 +329,45 @@ function salvar() {
         botaoSalvar.style.opacity = "1";
         botaoSalvar.style.cursor = "pointer";
       }
+=======
+    alert("Por favor, preencha a capacidade máxima de carga do veículo.");
+    return;
+  }
+
+  // 2. Extrai a lista de itens inseridos dinamicamente nos cards
+  const itens = [];
+  cards.forEach(card => {
+    itens.push({
+      tipo: card.querySelector('[data-field="tipo"]').value || 'Item Sem Nome',
+      quantidade: card.querySelector('[data-field="qtd"]').value || 1,
+      peso: card.querySelector('[data-field="peso"]').value || 0,
+      comprimento: card.querySelector('[data-field="comprimento"]').value || 0,
+      largura: card.querySelector('[data-field="largura"]').value || 0,
+      altura: card.querySelector('[data-field="altura"]').value || 0,
+      valor: card.querySelector('[data-field="valor"]').value || 0,
+      observacoes: card.querySelector('[data-field="obs"]').value || ''
+    });
+  });
+
+  console.log("Enviando dados estruturados para otimização via Python:", { transporte, itens });
+
+  // 3. Executa a chamada remota para o Controller no Python
+  eel.otimizar_e_salvar(transporte, itens)(function(retorno) {
+    if (retorno.sucesso) {
+      const msg = document.getElementById('success-msg');
+      document.getElementById('success-text').textContent = 
+        `Otimizado com sucesso! Valor total na mochila: R$ ${retorno.valor_total.toFixed(2)}`;
+      
+      msg.style.display = 'flex';
+      
+      setTimeout(() => {
+        msg.style.display = 'none';
+      }, 4000);
+
+      console.log("Mochila calculada. Itens selecionados para embarque:", retorno.itens_escolhidos);
+    } else {
+      alert("Erro de persistência: O algoritmo processou, mas os dados não puderam ser gravados no MySQL.");
+>>>>>>> 522a007256d658489c768dff5f9cb62fcc5327c4
     }
   });
 }

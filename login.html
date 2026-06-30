@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Login | Knapsack System</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@600&display=swap"
+    rel="stylesheet"
+  >
+</head>
+
+<body>
+
+  <div class="page-wrapper">
+
+    <!-- Cabeçalho igual ao projeto original -->
+    <header class="header">
+
+      <div class="logo">
+        <i class="ti ti-truck"></i>
+
+        <span>Knapsack System</span>
+      </div>
+
+      <div class="steps">
+
+        <div class="step active">
+          <div class="step-circle">1</div>
+
+          <span>Login</span>
+        </div>
+
+        <div class="step-line"></div>
+
+        <div class="step">
+          <div class="step-circle">2</div>
+
+          <span>Cadastro</span>
+        </div>
+
+      </div>
+
+    </header>
+
+    <!-- Tela de login -->
+    <main class="screen">
+
+      <div class="card">
+
+        <div class="card-header">
+
+          <h1>Login da Transportadora</h1>
+
+          <p>
+            Entre com seus dados para acessar o sistema
+          </p>
+
+        </div>
+
+        <form class="form-body">
+
+          <div class="field">
+
+            <label for="email">
+              E-mail
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Ex: transportadora@email.com"
+              required
+            >
+
+          </div>
+
+          <div class="field">
+
+            <label for="senha">
+              Senha
+            </label>
+
+            <input
+              type="password"
+              id="senha"
+              name="senha"
+              placeholder="Digite sua senha"
+              required
+            >
+
+          </div>
+
+          <div class="form-options">
+
+            <label class="checkbox-option">
+
+              <input
+                type="checkbox"
+                name="lembrar"
+              >
+
+              <span>
+                Lembrar de mim
+              </span>
+
+            </label>
+
+            <a href="#" class="link">
+              Esqueci minha senha
+            </a>
+
+          </div>
+
+        </form>
+
+        <div class="card-footer login-footer">
+
+          <p class="footer-text">
+
+            Ainda não possui uma conta?
+
+            <a href="./cadastro.html" class="link">
+              Cadastre-se
+            </a>
+
+          </p>
+
+          <button type="submit" class="btn-primary">
+
+            Entrar
+
+            <i class="ti ti-arrow-right"></i>
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</body>
+
+</html>
