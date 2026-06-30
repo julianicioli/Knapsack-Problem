@@ -1,0 +1,39 @@
+name: Python application (Knapsack System CD)
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Baixar o código do repositório
+      uses: actions/checkout@v4
+
+    - name: Configurar o Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+
+    - name: Instalar dependências
+      run: |
+        python -m pip install --upgrade pip
+        pip install mysqlclient eel
+
+    - name: Executar os testes automatizados
+      run: |
+        python -m unittest test_mochila.py
+
+    # ---- ETAPAS DE DELIVERY (CD) DO SEU PDF ADAPTADAS ----
+    - name: Package project
+      run: zip -r mochila_sistema.zip . -x "*.git*" "*venv*"
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: mochila-sistema-artifact
+        path: mochila_sistema.zip

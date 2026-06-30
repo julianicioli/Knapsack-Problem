@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    container_name: knapsack_app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./metrics:/metrics
+      - ./models:/models
+    working_dir: /metrics
+    environment:
+      - PYTHONUNBUFFERED=1
